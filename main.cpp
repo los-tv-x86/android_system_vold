@@ -329,7 +329,7 @@ static int process_config(VolumeManager* vm, VoldConfigs* configs) {
                 }
                 vm->addDiskSource(std::shared_ptr<VolumeManager::DiskSource>(
                         new VolumeManager::DiskSource("/devices/*/" + sdcard, sdcard,
-                        android::vold::Disk::Flags::kAdoptable, "auto", "")));
+                        partnum, android::vold::Disk::Flags::kAdoptable, "auto", "")));
                 configs->has_adoptable = true;
                 LOG(INFO) << "Add SDCARD=" << sdcard << " partnum=" << partnum;
             }
